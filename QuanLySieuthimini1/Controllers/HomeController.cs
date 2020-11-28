@@ -18,20 +18,6 @@ namespace QuanLySieuthimini1.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
         public ActionResult Dangnhap()
         {    
             return View();
@@ -52,8 +38,9 @@ namespace QuanLySieuthimini1.Controllers
                     var checkAdmin = Kiemtrataikhoan.FirstOrDefault().Role;
                     if (checkAdmin == "Admin")
                     {
-                        return RedirectToAction("Index", "Homes", new { Areas = "Admin" });
-                    } else
+                        return RedirectToAction("Index", "Homes", new { Area = "Admin" });
+                    } 
+                    else
                     {
                         return RedirectToAction("Index");
                     }    
@@ -65,41 +52,6 @@ namespace QuanLySieuthimini1.Controllers
                 }
             }
             return View();
-        }
-
-        public ActionResult Dangki()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Dangki (Nhanvien nv)
-        {
-            if(ModelState.IsValid)
-            {
-                var checkEmail = db.Nhanviens.FirstOrDefault(m => m.Email == nv.Email);
-                if(checkEmail == null)
-                {
-                    nv.Matkhau = GETMD5(nv.Matkhau);
-                    db.Configuration.ValidateOnSaveEnabled = false;
-                    db.Nhanviens.Add(nv);
-                    db.SaveChanges();
-                    return RedirectToAction("Dangnhap");
-                }
-                else
-                {
-                    ViewBag.EmailError = "Email đã tồn tại";
-                    return View("Dangki");
-                }    
-            }
-            return View();
-        }
-
-        public ActionResult Dangxuat()
-        {
-            Session.Clear();//remove session
-            return RedirectToAction("Dangnhap");
         }
 
         public static string GETMD5(string Matkhau)
@@ -115,5 +67,6 @@ namespace QuanLySieuthimini1.Controllers
             }
             return matkhaudamahoa;
         }
+
     }
 }
