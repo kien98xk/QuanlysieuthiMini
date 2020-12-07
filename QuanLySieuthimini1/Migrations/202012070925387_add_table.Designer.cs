@@ -13,7 +13,7 @@ namespace QuanLySieuthimini1.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202012070821525_add_table"; }
+            get { return "202012070925387_add_table"; }
         }
         
         string IMigrationMetadata.Source
