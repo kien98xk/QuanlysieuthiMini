@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -19,11 +20,11 @@ namespace QuanLySieuthimini1.Models
         [Required]
         public DateTime HSD { get; set; }
         [Required]
-        public string Loai_HH { get; set; }
-        [Required]
         public string SoLuongNhap { get; set; }
         [Required]
-        public string Ten_NH { get; set; }
+        public int Ma_NH { get; set; }
         public virtual ICollection<Hanghoa> Hanghoas { get; set; }
+        [ForeignKey("Ma_NH")]
+        public virtual Nhomhang Nhomhangs { get; set; }
     }
 }

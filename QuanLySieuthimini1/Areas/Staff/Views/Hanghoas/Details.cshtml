@@ -1,0 +1,43 @@
+﻿@model QuanLySieuthimini1.Models.Hanghoa
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Staff/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hanghoa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nhacungcap.Ten_NCC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nhacungcap.Ten_NCC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nhomhang.Ten_NH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nhomhang.Ten_NH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_HH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_HH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Ma_HH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

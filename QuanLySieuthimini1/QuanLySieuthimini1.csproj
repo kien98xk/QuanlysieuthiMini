@@ -137,21 +137,18 @@
     <Compile Include="Areas\Admin\Controllers\HomesController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhacungcapsController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhanviensController.cs" />
+    <Compile Include="Areas\Staff\Controllers\HanghoasController.cs" />
+    <Compile Include="Areas\Staff\Controllers\HoadonsController.cs" />
+    <Compile Include="Areas\Staff\Controllers\HomessController.cs" />
+    <Compile Include="Areas\Staff\Controllers\NhomhangsController.cs" />
     <Compile Include="Areas\Staff\StaffAreaRegistration.cs" />
-    <Compile Include="Controllers\HanghoasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NhomhangsController.cs" />
-    <Compile Include="Controllers\TaiKhoansController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011270355204_Create_table_Chitiethanghoa.cs" />
-    <Compile Include="Migrations\202011270355204_Create_table_Chitiethanghoa.Designer.cs">
-      <DependentUpon>202011270355204_Create_table_Chitiethanghoa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011270414164_Create_table.cs" />
-    <Compile Include="Migrations\202011270414164_Create_table.Designer.cs">
-      <DependentUpon>202011270414164_Create_table.cs</DependentUpon>
+    <Compile Include="Migrations\202012070821525_add_table.cs" />
+    <Compile Include="Migrations\202012070821525_add_table.Designer.cs">
+      <DependentUpon>202012070821525_add_table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Chitiethanghoa.cs" />
@@ -203,6 +200,25 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Areas\Staff\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Homes\Dangnhap.cshtml" />
+    <Content Include="Areas\Staff\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Staff\Views\Homess\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\Hanghoas\Create.cshtml" />
+    <Content Include="Areas\Staff\Views\Hanghoas\Delete.cshtml" />
+    <Content Include="Areas\Staff\Views\Hanghoas\Details.cshtml" />
+    <Content Include="Areas\Staff\Views\Hanghoas\Edit.cshtml" />
+    <Content Include="Areas\Staff\Views\Hanghoas\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\Nhomhangs\Create.cshtml" />
+    <Content Include="Areas\Staff\Views\Nhomhangs\Delete.cshtml" />
+    <Content Include="Areas\Staff\Views\Nhomhangs\Details.cshtml" />
+    <Content Include="Areas\Staff\Views\Nhomhangs\Edit.cshtml" />
+    <Content Include="Areas\Staff\Views\Nhomhangs\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\Hoadons\Create.cshtml" />
+    <Content Include="Areas\Staff\Views\Hoadons\Delete.cshtml" />
+    <Content Include="Areas\Staff\Views\Hoadons\Details.cshtml" />
+    <Content Include="Areas\Staff\Views\Hoadons\Edit.cshtml" />
+    <Content Include="Areas\Staff\Views\Hoadons\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\Homess\Dangnhap.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -355,9 +371,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Staff\Controllers\" />
     <Folder Include="Areas\Staff\Data\" />
-    <Folder Include="Areas\Staff\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -365,18 +379,15 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011270355204_Create_table_Chitiethanghoa.resx">
-      <DependentUpon>202011270355204_Create_table_Chitiethanghoa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011270414164_Create_table.resx">
-      <DependentUpon>202011270414164_Create_table.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012070821525_add_table.resx">
+      <DependentUpon>202012070821525_add_table.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

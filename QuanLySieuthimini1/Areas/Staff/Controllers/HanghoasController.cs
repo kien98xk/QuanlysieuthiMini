@@ -8,113 +8,118 @@ using System.Web;
 using System.Web.Mvc;
 using QuanLySieuthimini1.Models;
 
-namespace QuanLySieuthimini1.Controllers
+namespace QuanLySieuthimini1.Areas.Staff.Controllers
 {
-    public class NhomhangsController : Controller
+    public class HanghoasController : Controller
     {
         private ConnectDB db = new ConnectDB();
 
-        // GET: Nhomhangs
+        // GET: Staff/Hanghoas
         public ActionResult Index()
         {
-            if (Session["idNhanvien"] == null)
-            {
-                return RedirectToAction("Dangnhap", "Home");
-            }
-            return View(db.Nhomhangs.ToList());
+            var hanghoas = db.Hanghoas.Include(h => h.Nhacungcap).Include(h => h.Nhomhang);
+            return View(hanghoas.ToList());
         }
 
-        // GET: Nhomhangs/Details/5
+        // GET: Staff/Hanghoas/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nhomhang nhomhang = db.Nhomhangs.Find(id);
-            if (nhomhang == null)
+            Hanghoa hanghoa = db.Hanghoas.Find(id);
+            if (hanghoa == null)
             {
                 return HttpNotFound();
             }
-            return View(nhomhang);
+            return View(hanghoa);
         }
 
-        // GET: Nhomhangs/Create
+        // GET: Staff/Hanghoas/Create
         public ActionResult Create()
         {
+            ViewBag.Ma_NCC = new SelectList(db.Nhacungcaps, "Ma_NCC", "Ten_NCC");
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH");
             return View();
         }
 
-        // POST: Nhomhangs/Create
+        // POST: Staff/Hanghoas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Ma_NH,Ten_NH")] Nhomhang nhomhang)
+        public ActionResult Create([Bind(Include = "Ma_HH,Ma_NCC,Ma_NH,Ten_HH")] Hanghoa hanghoa)
         {
             if (ModelState.IsValid)
             {
-                db.Nhomhangs.Add(nhomhang);
+                db.Hanghoas.Add(hanghoa);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(nhomhang);
+            ViewBag.Ma_NCC = new SelectList(db.Nhacungcaps, "Ma_NCC", "Ten_NCC", hanghoa.Ma_NCC);
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH", hanghoa.Ma_NH);
+            return View(hanghoa);
         }
 
-        // GET: Nhomhangs/Edit/5
+        // GET: Staff/Hanghoas/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nhomhang nhomhang = db.Nhomhangs.Find(id);
-            if (nhomhang == null)
+            Hanghoa hanghoa = db.Hanghoas.Find(id);
+            if (hanghoa == null)
             {
                 return HttpNotFound();
             }
-            return View(nhomhang);
+            ViewBag.Ma_NCC = new SelectList(db.Nhacungcaps, "Ma_NCC", "Ten_NCC", hanghoa.Ma_NCC);
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH", hanghoa.Ma_NH);
+            return View(hanghoa);
         }
 
-        // POST: Nhomhangs/Edit/5
+        // POST: Staff/Hanghoas/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Ma_NH,Ten_NH")] Nhomhang nhomhang)
+        public ActionResult Edit([Bind(Include = "Ma_HH,Ma_NCC,Ma_NH,Ten_HH")] Hanghoa hanghoa)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(nhomhang).State = EntityState.Modified;
+                db.Entry(hanghoa).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(nhomhang);
+            ViewBag.Ma_NCC = new SelectList(db.Nhacungcaps, "Ma_NCC", "Ten_NCC", hanghoa.Ma_NCC);
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH", hanghoa.Ma_NH);
+            return View(hanghoa);
         }
 
-        // GET: Nhomhangs/Delete/5
+        // GET: Staff/Hanghoas/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nhomhang nhomhang = db.Nhomhangs.Find(id);
-            if (nhomhang == null)
+            Hanghoa hanghoa = db.Hanghoas.Find(id);
+            if (hanghoa == null)
             {
                 return HttpNotFound();
             }
-            return View(nhomhang);
+            return View(hanghoa);
         }
 
-        // POST: Nhomhangs/Delete/5
+        // POST: Staff/Hanghoas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Nhomhang nhomhang = db.Nhomhangs.Find(id);
-            db.Nhomhangs.Remove(nhomhang);
+            Hanghoa hanghoa = db.Hanghoas.Find(id);
+            db.Hanghoas.Remove(hanghoa);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

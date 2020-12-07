@@ -18,25 +18,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="@Url.Action("Index", "Homes")">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="@Url.Action("Index", "Homess")">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index", "Nhomhangs")">Nhóm hàng <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index", "Hanghoas")">Hàng hóa <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index", "Hoadons")">Hóa đơn <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Index", "Chitiethoadons")">Chi Tiết Hóa Đơn</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Index", "Chitiethanghoas")">Chi Tiết Hàng Hóa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Index", "Nhanviens")">Nhân Viên</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Index", "Nhacungcaps")">Nhà cung cấp</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Dangki", "Homes")">Đăng Ký</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Dangxuat", "Homes")">Đăng Xuất</a>
+                    <a class="nav-link" href="@Url.Action("Dangxuat", "Homess")">Đăng Xuất</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link">Xin Chào: @Session["Ten_NV"]</a>

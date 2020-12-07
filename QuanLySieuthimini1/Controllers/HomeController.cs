@@ -30,19 +30,19 @@ namespace QuanLySieuthimini1.Controllers
             if(ModelState.IsValid)
             {
                 var Mahoadulieu = GETMD5(Matkhau);
-                var Kiemtrataikhoan = db.Nhanviens.Where(n => n.Email.Equals(Email) && n.Matkhau.Equals(Mahoadulieu)).ToList();
+                var Kiemtrataikhoan = db.Nhanviens.Where(n => n.Email.Equals(Email) && n.Matkhau.Equals(Mahoadulieu)).FirstOrDefault();
                 if(Kiemtrataikhoan != null)
                 {
-                    Session["idNhanvien"] = Kiemtrataikhoan.FirstOrDefault().Ma_NV;
-                    Session["Ten_NV"] = Kiemtrataikhoan.FirstOrDefault().Ten_NV;
-                    var checkAdmin = Kiemtrataikhoan.FirstOrDefault().Role;
+                    Session["idNhanvien"] = Kiemtrataikhoan.Ma_NV;   
+                    Session["Ten_NV"] = Kiemtrataikhoan.Ten_NV;
+                    var checkAdmin = Kiemtrataikhoan.Role;
                     if (checkAdmin == "Admin")
                     {
                         return RedirectToAction("Index", "Homes", new { Area = "Admin" });
                     } 
                     else
                     {
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Index","Homess", new { Area = "Staff"});
                     }    
                 }
                 else
@@ -53,6 +53,9 @@ namespace QuanLySieuthimini1.Controllers
             }
             return View();
         }
+
+
+ 
 
         public static string GETMD5(string Matkhau)
         {
@@ -68,5 +71,10 @@ namespace QuanLySieuthimini1.Controllers
             return matkhaudamahoa;
         }
 
+        public ActionResult Dangxuat()
+        {
+            Session.Abandon();//remove session
+            return RedirectToAction("Dangnhap");
+        }
     }
 }

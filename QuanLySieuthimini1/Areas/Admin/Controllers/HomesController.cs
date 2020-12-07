@@ -47,11 +47,6 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
             return View();
         }
 
-        public string GETMD5(string matkhau)
-        {
-            throw new NotImplementedException();
-        }
-
         public static string AdminGETMD5(string Matkhau)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
@@ -65,10 +60,12 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
             }
             return matkhaudamahoa;
         }
+
+        
         public ActionResult Dangxuat()
         {
             Session.Abandon();//remove session
-            return RedirectToAction("Dangnhap");
+            return Redirect("/Home");
         }
     }
 }

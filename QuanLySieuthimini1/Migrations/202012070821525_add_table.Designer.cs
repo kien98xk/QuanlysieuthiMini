@@ -7,13 +7,13 @@ namespace QuanLySieuthimini1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Create_table_Chitiethanghoa : IMigrationMetadata
+    public sealed partial class add_table : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_table_Chitiethanghoa));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(add_table));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011270355204_Create_table_Chitiethanghoa"; }
+            get { return "202012070821525_add_table"; }
         }
         
         string IMigrationMetadata.Source
