@@ -13,7 +13,7 @@ namespace QuanLySieuthimini1.Models
         [Required]
         public string Ten_NH { get; set; }
         public virtual ICollection<Hanghoa> Hanghoas { get; set; }
-
+        public virtual ICollection<Chitiethanghoa> Chitiethanghoas { get; set; }
 
     }
 }

@@ -20,11 +20,11 @@ namespace QuanLySieuthimini1.Models
         [Required]
         public DateTime HSD { get; set; }
         [Required]
-        public string Loai_HH { get; set; }
-        [Required]
         public string SoLuongNhap { get; set; }
         [Required]
         public int Ma_NH { get; set; }
         public virtual ICollection<Hanghoa> Hanghoas { get; set; } 
+        [ForeignKey("Ma_NH")]
+        public virtual Nhomhang Nhomhangs { get; set; }
     }
 }

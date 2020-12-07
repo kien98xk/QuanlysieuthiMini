@@ -150,6 +150,10 @@
     <Compile Include="Migrations\202012070925387_add_table.Designer.cs">
       <DependentUpon>202012070925387_add_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012070932324_add_table1.cs" />
+    <Compile Include="Migrations\202012070932324_add_table1.Designer.cs">
+      <DependentUpon>202012070932324_add_table1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Chitiethanghoa.cs" />
     <Compile Include="Models\Chitiethoadon.cs" />
@@ -387,6 +391,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012070925387_add_table.resx">
       <DependentUpon>202012070925387_add_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012070932324_add_table1.resx">
+      <DependentUpon>202012070932324_add_table1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
