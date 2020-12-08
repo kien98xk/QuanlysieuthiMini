@@ -12,6 +12,7 @@ namespace QuanLySieuthimini1.Models
         [Key]
         public int Ma_HD { get; set; }
         public int Ma_HH { get; set; }
+        public string Ten_HH { get; set; }
         public int Ma_NV { get; set; }
         public int TongTien { get; set; }
         public string Trangthai { get; set; }

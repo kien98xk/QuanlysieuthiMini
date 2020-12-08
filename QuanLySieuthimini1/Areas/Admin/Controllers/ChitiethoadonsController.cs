@@ -39,7 +39,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         // GET: Admin/Chitiethoadons/Create
         public ActionResult Create()
         {
-            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Trangthai");
+            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ten_HH");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Ma_CTHD,Ma_HD,Ma_HH,Soluong,Gia")] Chitiethoadon chitiethoadon)
+        public ActionResult Create([Bind(Include = "Ma_CTHD,Ma_HD,Ten_HH,Soluong,Gia")] Chitiethoadon chitiethoadon)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Trangthai", chitiethoadon.Ma_HD);
+            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ten_HH", chitiethoadon.Ma_HD);
             return View(chitiethoadon);
         }
 
@@ -73,7 +73,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Trangthai", chitiethoadon.Ma_HD);
+            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ten_HH", chitiethoadon.Ma_HD);
             return View(chitiethoadon);
         }
 
@@ -82,7 +82,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Ma_CTHD,Ma_HD,Ma_HH,Soluong,Gia")] Chitiethoadon chitiethoadon)
+        public ActionResult Edit([Bind(Include = "Ma_CTHD,Ma_HD,Ten_HH,Soluong,Gia")] Chitiethoadon chitiethoadon)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Trangthai", chitiethoadon.Ma_HD);
+            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ten_HH", chitiethoadon.Ma_HD);
             return View(chitiethoadon);
         }
 

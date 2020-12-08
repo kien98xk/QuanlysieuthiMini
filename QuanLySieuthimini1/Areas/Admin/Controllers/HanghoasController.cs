@@ -10,116 +10,116 @@ using QuanLySieuthimini1.Models;
 
 namespace QuanLySieuthimini1.Areas.Admin.Controllers
 {
-    public class HoadonsController : Controller
+    public class HanghoasController : Controller
     {
         private ConnectDB db = new ConnectDB();
 
-        // GET: Admin/Hoadons
+        // GET: Admin/Hanghoas
         public ActionResult Index()
         {
-            var hoadons = db.Hoadons.Include(h => h.Hanghoa).Include(h => h.Nhanvien);
-            return View(hoadons.ToList());
+            var hanghoas = db.Hanghoas.Include(h => h.Nhacungcap).Include(h => h.Nhomhang);
+            return View(hanghoas.ToList());
         }
 
-        // GET: Admin/Hoadons/Details/5
+        // GET: Admin/Hanghoas/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Hoadon hoadon = db.Hoadons.Find(id);
-            if (hoadon == null)
+            Hanghoa hanghoa = db.Hanghoas.Find(id);
+            if (hanghoa == null)
             {
                 return HttpNotFound();
             }
-            return View(hoadon);
+            return View(hanghoa);
         }
 
-        // GET: Admin/Hoadons/Create
+        // GET: Admin/Hanghoas/Create
         public ActionResult Create()
         {
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH");
-            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV");
+            ViewBag.Ma_NCC = new SelectList(db.Nhacungcaps, "Ma_NCC", "Ten_NCC");
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH");
             return View();
         }
 
-        // POST: Admin/Hoadons/Create
+        // POST: Admin/Hanghoas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Ma_HD,Ma_HH,Ten_HH,Ma_NV,TongTien,Trangthai,Ngaytaohoadon")] Hoadon hoadon)
+        public ActionResult Create([Bind(Include = "Ma_HH,Ma_NCC,Ma_NH,Ten_HH")] Hanghoa hanghoa)
         {
             if (ModelState.IsValid)
             {
-                db.Hoadons.Add(hoadon);
+                db.Hanghoas.Add(hanghoa);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH", hoadon.Ma_HH);
-            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV", hoadon.Ma_NV);
-            return View(hoadon);
+            ViewBag.Ma_NCC = new SelectList(db.Nhacungcaps, "Ma_NCC", "Ten_NCC", hanghoa.Ma_NCC);
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH", hanghoa.Ma_NH);
+            return View(hanghoa);
         }
 
-        // GET: Admin/Hoadons/Edit/5
+        // GET: Admin/Hanghoas/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Hoadon hoadon = db.Hoadons.Find(id);
-            if (hoadon == null)
+            Hanghoa hanghoa = db.Hanghoas.Find(id);
+            if (hanghoa == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH", hoadon.Ma_HH);
-            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV", hoadon.Ma_NV);
-            return View(hoadon);
+            ViewBag.Ma_NCC = new SelectList(db.Nhacungcaps, "Ma_NCC", "Ten_NCC", hanghoa.Ma_NCC);
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH", hanghoa.Ma_NH);
+            return View(hanghoa);
         }
 
-        // POST: Admin/Hoadons/Edit/5
+        // POST: Admin/Hanghoas/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Ma_HD,Ma_HH,Ten_HH,Ma_NV,TongTien,Trangthai,Ngaytaohoadon")] Hoadon hoadon)
+        public ActionResult Edit([Bind(Include = "Ma_HH,Ma_NCC,Ma_NH,Ten_HH")] Hanghoa hanghoa)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(hoadon).State = EntityState.Modified;
+                db.Entry(hanghoa).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH", hoadon.Ma_HH);
-            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV", hoadon.Ma_NV);
-            return View(hoadon);
+            ViewBag.Ma_NCC = new SelectList(db.Nhacungcaps, "Ma_NCC", "Ten_NCC", hanghoa.Ma_NCC);
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH", hanghoa.Ma_NH);
+            return View(hanghoa);
         }
 
-        // GET: Admin/Hoadons/Delete/5
+        // GET: Admin/Hanghoas/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Hoadon hoadon = db.Hoadons.Find(id);
-            if (hoadon == null)
+            Hanghoa hanghoa = db.Hanghoas.Find(id);
+            if (hanghoa == null)
             {
                 return HttpNotFound();
             }
-            return View(hoadon);
+            return View(hanghoa);
         }
 
-        // POST: Admin/Hoadons/Delete/5
+        // POST: Admin/Hanghoas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Hoadon hoadon = db.Hoadons.Find(id);
-            db.Hoadons.Remove(hoadon);
+            Hanghoa hanghoa = db.Hanghoas.Find(id);
+            db.Hanghoas.Remove(hanghoa);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

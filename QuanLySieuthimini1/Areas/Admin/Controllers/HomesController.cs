@@ -36,7 +36,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
                     db.Configuration.ValidateOnSaveEnabled = false;
                     db.Nhanviens.Add(nv);
                     db.SaveChanges();
-                    return RedirectToAction("Dangnhap");
+                    return RedirectToAction("Index");
                 }
                 else
                 {

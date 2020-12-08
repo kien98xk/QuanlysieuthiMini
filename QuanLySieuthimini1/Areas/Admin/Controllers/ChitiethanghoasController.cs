@@ -17,7 +17,8 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         // GET: Admin/Chitiethanghoas
         public ActionResult Index()
         {
-            return View(db.Chitiethanghoas.ToList());
+            var chitiethanghoas = db.Chitiethanghoas.Include(c => c.Nhomhangs);
+            return View(chitiethanghoas.ToList());
         }
 
         // GET: Admin/Chitiethanghoas/Details/5
@@ -38,6 +39,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         // GET: Admin/Chitiethanghoas/Create
         public ActionResult Create()
         {
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Ma_HH,GiamMua,GiaBan,Noi_SX,HSD,Loai_HH,SoLuongNhap,Ten_NH")] Chitiethanghoa chitiethanghoa)
+        public ActionResult Create([Bind(Include = "Ma_HH,Ten_HH,GiaMua,GiaBan,Noi_SX,HSD,SoLuongNhap,Ma_NH")] Chitiethanghoa chitiethanghoa)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH", chitiethanghoa.Ma_NH);
             return View(chitiethanghoa);
         }
 
@@ -70,6 +73,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH", chitiethanghoa.Ma_NH);
             return View(chitiethanghoa);
         }
 
@@ -78,7 +82,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Ma_HH,GiamMua,GiaBan,Noi_SX,HSD,Loai_HH,SoLuongNhap,Ten_NH")] Chitiethanghoa chitiethanghoa)
+        public ActionResult Edit([Bind(Include = "Ma_HH,Ten_HH,GiaMua,GiaBan,Noi_SX,HSD,SoLuongNhap,Ma_NH")] Chitiethanghoa chitiethanghoa)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH", chitiethanghoa.Ma_NH);
             return View(chitiethanghoa);
         }
 

@@ -12,7 +12,9 @@ namespace QuanLySieuthimini1.Models
         [Key,Required]
         public int Ma_HH { get; set; }
         [Required]
-        public int GiamMua { get; set; }
+        public string Ten_HH { get; set; }
+        [Required]
+        public int GiaMua { get; set; }
         [Required]
         public int GiaBan { get; set; }
         [Required]

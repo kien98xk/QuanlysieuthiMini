@@ -14,7 +14,7 @@ namespace QuanLySieuthimini1.Models
         [Required]
         public int Ma_HD { get; set; }
         [Required]
-        public int Ma_HH { get; set; }
+        public int Ten_HH { get; set; }
         [Required]
         public int Soluong { get; set; }
         [Required]

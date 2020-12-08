@@ -10,116 +10,107 @@ using QuanLySieuthimini1.Models;
 
 namespace QuanLySieuthimini1.Areas.Admin.Controllers
 {
-    public class HoadonsController : Controller
+    public class NhomhangsController : Controller
     {
         private ConnectDB db = new ConnectDB();
 
-        // GET: Admin/Hoadons
+        // GET: Admin/Nhomhangs
         public ActionResult Index()
         {
-            var hoadons = db.Hoadons.Include(h => h.Hanghoa).Include(h => h.Nhanvien);
-            return View(hoadons.ToList());
+            return View(db.Nhomhangs.ToList());
         }
 
-        // GET: Admin/Hoadons/Details/5
+        // GET: Admin/Nhomhangs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Hoadon hoadon = db.Hoadons.Find(id);
-            if (hoadon == null)
+            Nhomhang nhomhang = db.Nhomhangs.Find(id);
+            if (nhomhang == null)
             {
                 return HttpNotFound();
             }
-            return View(hoadon);
+            return View(nhomhang);
         }
 
-        // GET: Admin/Hoadons/Create
+        // GET: Admin/Nhomhangs/Create
         public ActionResult Create()
         {
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH");
-            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV");
             return View();
         }
 
-        // POST: Admin/Hoadons/Create
+        // POST: Admin/Nhomhangs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Ma_HD,Ma_HH,Ten_HH,Ma_NV,TongTien,Trangthai,Ngaytaohoadon")] Hoadon hoadon)
+        public ActionResult Create([Bind(Include = "Ma_NH,Ten_NH")] Nhomhang nhomhang)
         {
             if (ModelState.IsValid)
             {
-                db.Hoadons.Add(hoadon);
+                db.Nhomhangs.Add(nhomhang);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH", hoadon.Ma_HH);
-            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV", hoadon.Ma_NV);
-            return View(hoadon);
+            return View(nhomhang);
         }
 
-        // GET: Admin/Hoadons/Edit/5
+        // GET: Admin/Nhomhangs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Hoadon hoadon = db.Hoadons.Find(id);
-            if (hoadon == null)
+            Nhomhang nhomhang = db.Nhomhangs.Find(id);
+            if (nhomhang == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH", hoadon.Ma_HH);
-            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV", hoadon.Ma_NV);
-            return View(hoadon);
+            return View(nhomhang);
         }
 
-        // POST: Admin/Hoadons/Edit/5
+        // POST: Admin/Nhomhangs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Ma_HD,Ma_HH,Ten_HH,Ma_NV,TongTien,Trangthai,Ngaytaohoadon")] Hoadon hoadon)
+        public ActionResult Edit([Bind(Include = "Ma_NH,Ten_NH")] Nhomhang nhomhang)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(hoadon).State = EntityState.Modified;
+                db.Entry(nhomhang).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH", hoadon.Ma_HH);
-            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV", hoadon.Ma_NV);
-            return View(hoadon);
+            return View(nhomhang);
         }
 
-        // GET: Admin/Hoadons/Delete/5
+        // GET: Admin/Nhomhangs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Hoadon hoadon = db.Hoadons.Find(id);
-            if (hoadon == null)
+            Nhomhang nhomhang = db.Nhomhangs.Find(id);
+            if (nhomhang == null)
             {
                 return HttpNotFound();
             }
-            return View(hoadon);
+            return View(nhomhang);
         }
 
-        // POST: Admin/Hoadons/Delete/5
+        // POST: Admin/Nhomhangs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Hoadon hoadon = db.Hoadons.Find(id);
-            db.Hoadons.Remove(hoadon);
+            Nhomhang nhomhang = db.Nhomhangs.Find(id);
+            db.Nhomhangs.Remove(nhomhang);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
