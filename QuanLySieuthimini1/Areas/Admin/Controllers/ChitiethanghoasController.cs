@@ -40,7 +40,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         public ActionResult Create()
         {
             var context = new ConnectDB();
-            var HanghoaSelect = new SelectList(context.Hanghoas, "Ten_HH", "Ten_HH");
+            var HanghoaSelect = new SelectList(context.Hanghoas, "Ten_HH","Ten_HH");
             ViewBag.Ten_HH = HanghoaSelect;
             ViewBag.Ma_NH = new SelectList(db.Nhomhangs, "Ma_NH", "Ten_NH");
             return View();

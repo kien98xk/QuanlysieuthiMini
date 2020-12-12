@@ -10,37 +10,35 @@ namespace QuanLySieuthimini1.Models
     public class Nhanvien
     {
         [Key]
-        [Display(Name = "Mã Nhân Viên")]
+        [Display(Name = "Mã nhân viên")]
         public int Ma_NV { get; set; }
         [Required, MaxLength(30)]
-        [Display(Name = "Tên Nhân Viên")]
+        [Display(Name = "Tên nhân viên")]
         public string Ten_NV { get; set; }
         [Required]
-        [Display(Name = "Số ĐT")]
+        [Display(Name = "Số điện thoại")]
         public int SĐT { get; set; }
         [Required]
-        [Display(Name = "Địa Chỉ")]
+        [Display(Name = "Địa chỉ")]
         public string Diachi { get; set; }
         [Required]
-        [Display(Name = "Giới Tính")]
+        [Display(Name = "Giới tính")]
         public string Gioitinh { get; set; }
-        [Required]
-        [Display(Name = "Ngày Vào Làm")]
+        [Display(Name = "Ngày vào làm")]
         public string Ngayvaolam { get; set; }
         public virtual ICollection<Hoadon> Hoadons { get; set; }
         public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
         [Required, EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-        [Display(Name = "Role")]
+        [Display(Name = "Chức vụ")]
         public string Role { get; set; }
         [Required]
-        [Display(Name = "Mật Khẩu")]
+        [Display(Name = "Mật khẩu")]
         public string Matkhau { get; set; }
         [NotMapped]
         [Required]
         [Compare("Matkhau")]
-        [Display(Name = "Xác Nhận Mật Khẩu")]
         public string Xacnhanmatkhau { get; set; }
 
     }
