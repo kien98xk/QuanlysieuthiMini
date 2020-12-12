@@ -39,7 +39,8 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         // GET: Admin/Hoadons/Create
         public ActionResult Create()
         {
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH");
+            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ma_HH");
+            ViewBag.Ten_HH = new SelectList(db.Hanghoas, "Ten_HH", "Ten_HH");
             ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV");
             return View();
         }
