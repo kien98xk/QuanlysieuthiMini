@@ -3,16 +3,16 @@ namespace QuanLySieuthimini1.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class add_table5 : DbMigration
+    public partial class add_table : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Chitiethanghoas", "Ten_HH", c => c.String(nullable: false));
+            AlterColumn("dbo.Chitiethoadons", "Ten_HH", c => c.String(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Chitiethanghoas", "Ten_HH");
+            AlterColumn("dbo.Chitiethoadons", "Ten_HH", c => c.Int(nullable: false));
         }
     }
 }

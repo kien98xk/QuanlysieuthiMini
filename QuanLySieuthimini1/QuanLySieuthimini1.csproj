@@ -148,29 +148,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012070925387_add_table.cs" />
-    <Compile Include="Migrations\202012070925387_add_table.Designer.cs">
-      <DependentUpon>202012070925387_add_table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012070932324_add_table1.cs" />
-    <Compile Include="Migrations\202012070932324_add_table1.Designer.cs">
-      <DependentUpon>202012070932324_add_table1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012071545013_add_table2.cs" />
-    <Compile Include="Migrations\202012071545013_add_table2.Designer.cs">
-      <DependentUpon>202012071545013_add_table2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012071613382_add_table3.cs" />
-    <Compile Include="Migrations\202012071613382_add_table3.Designer.cs">
-      <DependentUpon>202012071613382_add_table3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012080644078_add_table4.cs" />
-    <Compile Include="Migrations\202012080644078_add_table4.Designer.cs">
-      <DependentUpon>202012080644078_add_table4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012080651570_add_table5.cs" />
-    <Compile Include="Migrations\202012080651570_add_table5.Designer.cs">
-      <DependentUpon>202012080651570_add_table5.cs</DependentUpon>
+    <Compile Include="Migrations\202012120406361_add_table.cs" />
+    <Compile Include="Migrations\202012120406361_add_table.Designer.cs">
+      <DependentUpon>202012120406361_add_table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Chitiethanghoa.cs" />
@@ -251,16 +231,6 @@
     <Content Include="Areas\Admin\Views\Nhacungcaps\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Nhacungcaps\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Nhacungcaps\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Nhanviens\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Nhanviens\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Nhanviens\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Nhanviens\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Nhanviens\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Hoadons\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Hoadons\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Hoadons\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Hoadons\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Hoadons\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Nhomhangs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Nhomhangs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Nhomhangs\Details.cshtml" />
@@ -276,6 +246,16 @@
     <Content Include="Areas\Admin\Views\Chitiethanghoas\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Chitiethanghoas\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Chitiethanghoas\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Nhanviens\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Nhanviens\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Nhanviens\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Nhanviens\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Nhanviens\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Hoadons\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Hoadons\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Hoadons\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Hoadons\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Hoadons\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -377,16 +357,6 @@
     <Content Include="Views\TaiKhoans\Details.cshtml" />
     <Content Include="Views\TaiKhoans\Edit.cshtml" />
     <Content Include="Views\TaiKhoans\Index.cshtml" />
-    <Content Include="Views\Nhomhangs\Create.cshtml" />
-    <Content Include="Views\Nhomhangs\Delete.cshtml" />
-    <Content Include="Views\Nhomhangs\Details.cshtml" />
-    <Content Include="Views\Nhomhangs\Edit.cshtml" />
-    <Content Include="Views\Nhomhangs\Index.cshtml" />
-    <Content Include="Views\Hanghoas\Create.cshtml" />
-    <Content Include="Views\Hanghoas\Delete.cshtml" />
-    <Content Include="Views\Hanghoas\Details.cshtml" />
-    <Content Include="Views\Hanghoas\Edit.cshtml" />
-    <Content Include="Views\Hanghoas\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Homes\Dangki.cshtml" />
     <Content Include="Views\Home\Dangnhap.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -417,23 +387,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012070925387_add_table.resx">
-      <DependentUpon>202012070925387_add_table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012070932324_add_table1.resx">
-      <DependentUpon>202012070932324_add_table1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012071545013_add_table2.resx">
-      <DependentUpon>202012071545013_add_table2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012071613382_add_table3.resx">
-      <DependentUpon>202012071613382_add_table3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012080644078_add_table4.resx">
-      <DependentUpon>202012080644078_add_table4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012080651570_add_table5.resx">
-      <DependentUpon>202012080651570_add_table5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012120406361_add_table.resx">
+      <DependentUpon>202012120406361_add_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

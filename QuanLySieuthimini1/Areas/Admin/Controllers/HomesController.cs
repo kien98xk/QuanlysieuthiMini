@@ -61,7 +61,6 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
             return matkhaudamahoa;
         }
 
-        
         public ActionResult Dangxuat()
         {
             Session.Abandon();//remove session

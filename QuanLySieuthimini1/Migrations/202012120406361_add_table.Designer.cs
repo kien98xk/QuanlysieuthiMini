@@ -7,13 +7,13 @@ namespace QuanLySieuthimini1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class add_table1 : IMigrationMetadata
+    public sealed partial class add_table : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(add_table1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(add_table));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012070932324_add_table1"; }
+            get { return "202012120406361_add_table"; }
         }
         
         string IMigrationMetadata.Source
