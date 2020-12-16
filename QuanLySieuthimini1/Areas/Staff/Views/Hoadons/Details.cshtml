@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Areas/Staff/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout1.cshtml";
 }
 
 <h2>Details</h2>
@@ -12,19 +12,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Hanghoa.Ten_HH)
+            @Html.DisplayNameFor(model => model.Ten_HH)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Hanghoa.Ten_HH)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nhanvien.Ten_NV)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nhanvien.Ten_NV)
+            @Html.DisplayFor(model => model.Ten_HH)
         </dd>
 
         <dt>

@@ -5,12 +5,18 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Danh sách chi tiết hoá đơn</h2>
-
-<p>
-    @Html.ActionLink("Thêm Mới", "Create")
-</p>
 <table class="table">
+    <tr>
+        <th>
+            <h2>Danh sách chi tiết hoá đơn</h2>
+        </th>
+        <th>
+            @Html.ActionLink("Thêm Mới", "Create")
+        </th>
+        <th>
+            @Html.ActionLink("Quay Lại", "Index", "Homes")
+        </th>
+    </tr>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Ma_CTHD)
@@ -20,9 +26,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Hoadon.Ten_HH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ten_HH)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Soluong)
@@ -43,9 +46,6 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Hoadon.Ten_HH)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Ten_HH)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Soluong)

@@ -5,12 +5,15 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Danh sách nhân viên</h2>
-
-<p>
-    @Html.ActionLink("Thêm Mới", "Create")
-</p>
 <table class="table">
+    <tr>
+        <th>
+            <h2>Danh sách nhân viên</h2>
+        </th>
+        <th>
+            @Html.ActionLink("Quay lại", "Index", "Homes")
+        </th>
+    </tr>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Ten_NV)
@@ -39,38 +42,39 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ten_NV)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SĐT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Diachi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gioitinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ngayvaolam)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Role)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Matkhau)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Ma_NV }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Ma_NV }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Ma_NV })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten_NV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SĐT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gioitinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngayvaolam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matkhau)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.Ma_NV }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.Ma_NV }) |
+                @Html.ActionLink("Xoá", "Delete", new { id = item.Ma_NV })
+            </td>
+        </tr>
+    }
 
 </table>

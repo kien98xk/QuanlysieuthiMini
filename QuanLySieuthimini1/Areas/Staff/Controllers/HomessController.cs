@@ -18,11 +18,11 @@ namespace QuanLySieuthimini1.Areas.Staff.Controllers
             return View();
         }
 
-        
+
         public ActionResult Dangxuat()
         {
             Session.Abandon();//remove session
-            return Redirect("/Home");
+            return Redirect("/Home/Dangnhap");
         }
     }
 }

@@ -5,12 +5,18 @@
     Layout = "~/Areas/Staff/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
+    <tr>
+        <th>
+            <h2>Danh sách hàng hoá</h2>
+        </th>
+        <th>
+            @Html.ActionLink("Thêm Mới", "Create")
+        </th>
+        <th>
+            @Html.ActionLink("Quay Lại", "Index", "Homess")
+        </th>
+    </tr>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Nhacungcap.Ten_NCC)
@@ -21,6 +27,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Ten_HH)
         </th>
+        
         <th></th>
     </tr>
 
@@ -29,6 +36,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Nhacungcap.Ten_NCC)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.Nhomhang.Ten_NH)
         </td>
@@ -36,9 +44,9 @@
             @Html.DisplayFor(modelItem => item.Ten_HH)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Ma_HH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Ma_HH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Ma_HH })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.Ma_HH }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.Ma_HH }) |
+            @Html.ActionLink("Xoá", "Delete", new { id=item.Ma_HH })
         </td>
     </tr>
 }

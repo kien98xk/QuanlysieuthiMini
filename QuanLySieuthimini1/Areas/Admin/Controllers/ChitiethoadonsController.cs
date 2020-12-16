@@ -42,7 +42,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
             var context = new ConnectDB();
             var HanghoaSelect = new SelectList(context.Hanghoas, "Ten_HH", "Ten_HH");
             ViewBag.Ten_HH = HanghoaSelect;
-            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ten_HH");
+            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ma_HD");
             return View();
         }
 
@@ -60,7 +60,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ten_HH", chitiethoadon.Ma_HD);
+            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ma_HD", chitiethoadon.Ma_HD);
             return View(chitiethoadon);
         }
 
@@ -76,7 +76,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ten_HH", chitiethoadon.Ma_HD);
+            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ma_HD", chitiethoadon.Ma_HD);
             return View(chitiethoadon);
         }
 
@@ -93,7 +93,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ten_HH", chitiethoadon.Ma_HD);
+            ViewBag.Ma_HD = new SelectList(db.Hoadons, "Ma_HD", "Ma_HD", chitiethoadon.Ma_HD);
             return View(chitiethoadon);
         }
 

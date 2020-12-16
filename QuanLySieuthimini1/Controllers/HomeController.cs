@@ -74,7 +74,7 @@ namespace QuanLySieuthimini1.Controllers
         public ActionResult Dangxuat()
         {
             Session.Abandon();//remove session
-            return RedirectToAction("Dangnhap");
+            return Redirect("/Home");
         }
     }
 }

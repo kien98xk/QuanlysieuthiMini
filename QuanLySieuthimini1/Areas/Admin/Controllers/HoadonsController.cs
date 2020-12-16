@@ -14,6 +14,10 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
     {
         private ConnectDB db = new ConnectDB();
 
+        public HoadonsController()
+        {
+        }
+
         // GET: Admin/Hoadons
         public ActionResult Index()
         {

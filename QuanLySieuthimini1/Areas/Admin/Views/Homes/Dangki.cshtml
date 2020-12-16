@@ -1,7 +1,7 @@
 ﻿@model QuanLySieuthimini1.Models.Nhanvien
 @{
     ViewBag.Title = "Dangki";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout1.cshtml";
 }
 
 <h2>Tạo tài khoản mới </h2>
@@ -43,6 +43,7 @@
                 @Html.TextBoxFor(nv => nv.Role)
             </div>
             <input type="submit" value="Đăng ký" />
+            @Html.ActionLink("Quay Lại","Index", "Homes")
         }
     </div>
 </div>
