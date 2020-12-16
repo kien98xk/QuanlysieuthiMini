@@ -80,9 +80,13 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Ma_NV,Ten_NV,SĐT,Diachi,Gioitinh,Ngayvaolam,Email,Role,Matkhau")] Nhanvien nhanvien)
         {
+            ModelState.Clear();
             if (ModelState.IsValid)
             {
+                db.Configuration.ValidateOnSaveEnabled = false;
                 db.Entry(nhanvien).State = EntityState.Modified;
+
+                nhanvien.Ten_NV = nhanvien.Ten_NV;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
