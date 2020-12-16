@@ -85,6 +85,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
             {
                 db.Configuration.ValidateOnSaveEnabled = false;
                 db.Entry(nhanvien).State = EntityState.Modified;
+
                 nhanvien.Ten_NV = nhanvien.Ten_NV;
                 db.SaveChanges();
                 return RedirectToAction("Index");
