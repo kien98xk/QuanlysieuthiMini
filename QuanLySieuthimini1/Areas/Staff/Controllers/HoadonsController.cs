@@ -14,14 +14,14 @@ namespace QuanLySieuthimini1.Areas.Staff.Controllers
     {
         private ConnectDB db = new ConnectDB();
 
-        // GET: Admin/Hoadons
+        // GET: Staff/Hoadons
         public ActionResult Index()
         {
             var hoadons = db.Hoadons.Include(h => h.Hanghoa).Include(h => h.Nhanvien);
             return View(hoadons.ToList());
         }
 
-        // GET: Admin/Hoadons/Details/5
+        // GET: Staff/Hoadons/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,20 +36,15 @@ namespace QuanLySieuthimini1.Areas.Staff.Controllers
             return View(hoadon);
         }
 
-        // GET: Admin/Hoadons/Create
+        // GET: Staff/Hoadons/Create
         public ActionResult Create()
         {
-
-
-
-            var context = new ConnectDB();
-            var HanghoaSelect = new SelectList(context.Hanghoas, "Ten_HH", "Ten_HH");
-            ViewBag.Ten_HH = HanghoaSelect;
+            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ma_HH");
             ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV");
             return View();
         }
 
-        // POST: Admin/Hoadons/Create
+        // POST: Staff/Hoadons/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -68,7 +63,7 @@ namespace QuanLySieuthimini1.Areas.Staff.Controllers
             return View(hoadon);
         }
 
-        // GET: Admin/Hoadons/Edit/5
+        // GET: Staff/Hoadons/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,7 +80,7 @@ namespace QuanLySieuthimini1.Areas.Staff.Controllers
             return View(hoadon);
         }
 
-        // POST: Admin/Hoadons/Edit/5
+        // POST: Staff/Hoadons/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -98,12 +93,12 @@ namespace QuanLySieuthimini1.Areas.Staff.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ten_HH", "Ten_HH", hoadon.Ten_HH);
-            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ten_NV", "Ten_NV", hoadon.Nhanvien.Ten_NV);
+            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH", hoadon.Ma_HH);
+            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV", hoadon.Ma_NV);
             return View(hoadon);
         }
 
-        // GET: Admin/Hoadons/Delete/5
+        // GET: Staff/Hoadons/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -118,7 +113,7 @@ namespace QuanLySieuthimini1.Areas.Staff.Controllers
             return View(hoadon);
         }
 
-        // POST: Admin/Hoadons/Delete/5
+        // POST: Staff/Hoadons/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

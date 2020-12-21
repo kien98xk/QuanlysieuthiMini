@@ -5,26 +5,15 @@
     Layout = "~/Areas/Staff/Views/Shared/_Layout.cshtml";
 }
 
-
+<h2>Index</h2>
 
 <p>
-    
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            <h2>Danh sách hoá đơn</h2>
-        </th>
-        <th>
-            @Html.ActionLink("Thêm Mới", "Create")
-        </th>
-        <th>
-            @Html.ActionLink("Quay Lại", "Index", "Homes")
-        </th>
-    </tr>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Ma_HD)
+            @Html.DisplayNameFor(model => model.Ma_HH)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nhanvien.Ten_NV)
@@ -44,33 +33,32 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ma_HD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nhanvien.Ten_NV)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ten_HH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TongTien)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Trangthai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ngaytaohoadon)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Ma_HD }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Ma_HD }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Ma_HD })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ma_HH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nhanvien.Ten_NV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten_HH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trangthai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaytaohoadon)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Ma_HD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Ma_HD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Ma_HD })
+        </td>
+    </tr>
+}
 
 </table>

@@ -1898,11 +1898,6 @@
     <Content Include="Areas\Staff\Views\Nhomhangs\Details.cshtml" />
     <Content Include="Areas\Staff\Views\Nhomhangs\Edit.cshtml" />
     <Content Include="Areas\Staff\Views\Nhomhangs\Index.cshtml" />
-    <Content Include="Areas\Staff\Views\Hoadons\Create.cshtml" />
-    <Content Include="Areas\Staff\Views\Hoadons\Delete.cshtml" />
-    <Content Include="Areas\Staff\Views\Hoadons\Details.cshtml" />
-    <Content Include="Areas\Staff\Views\Hoadons\Edit.cshtml" />
-    <Content Include="Areas\Staff\Views\Hoadons\Index.cshtml" />
     <Content Include="Areas\Staff\Views\Homess\Dangnhap.cshtml" />
     <Content Include="Areas\Admin\Views\Hanghoas\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Hanghoas\Delete.cshtml" />
@@ -2114,6 +2109,11 @@
     <Content Include="Areas\Admin\Views\Hoadons\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Hoadons\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Hoadons\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\Hoadons\Create.cshtml" />
+    <Content Include="Areas\Staff\Views\Hoadons\Delete.cshtml" />
+    <Content Include="Areas\Staff\Views\Hoadons\Details.cshtml" />
+    <Content Include="Areas\Staff\Views\Hoadons\Edit.cshtml" />
+    <Content Include="Areas\Staff\Views\Hoadons\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
