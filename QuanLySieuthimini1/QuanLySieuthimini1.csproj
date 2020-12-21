@@ -1929,11 +1929,6 @@
     <Content Include="Areas\Admin\Views\Chitiethanghoas\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Chitiethanghoas\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Chitiethanghoas\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Hoadons\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Hoadons\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Hoadons\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Hoadons\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Hoadons\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Nhanviens\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Nhanviens\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Nhanviens\Details.cshtml" />
@@ -2114,6 +2109,11 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout1.cshtml" />
     <Content Include="Areas\Staff\Views\Shared\_Layout1.cshtml" />
     <Content Include="Areas\Staff\Views\Shared\_Layout2.cshtml" />
+    <Content Include="Areas\Admin\Views\Hoadons\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Hoadons\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Hoadons\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Hoadons\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Hoadons\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

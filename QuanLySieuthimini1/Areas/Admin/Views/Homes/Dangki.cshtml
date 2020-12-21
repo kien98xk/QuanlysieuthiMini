@@ -4,47 +4,58 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout1.cshtml";
 }
 
-<h2>Tạo tài khoản mới </h2>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<style>
+    body {
+        padding-top: 0px;
+    }
+
+    .form-control {
+        margin-bottom: 10px;
+    }
+
+    .login-screen-bg {
+        background-color: #EFEFEF;
+    }
+</style>
 <div class="container">
-    <div class="col-6">
-        @using (Html.BeginForm("Dangki", "Homes", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-            <div>
-                @Html.LabelFor(nv => nv.Ten_NV, "Tên Nhân Viên:")
-                @Html.TextBoxFor(nv => nv.Ten_NV)
-            </div>
-            <div>
-                @Html.LabelFor(nv => nv.SĐT, "Số Điện Thoại:")
-                @Html.TextBoxFor(nv => nv.SĐT)
-            </div>
-            <div>
-                @Html.LabelFor(nv => nv.Diachi, "Địa chỉ:")
-                @Html.TextBoxFor(nv => nv.Diachi)
-            </div>
-            <div>
-                @Html.LabelFor(nv => nv.Gioitinh, "Giới tính:")
-                @Html.TextBoxFor(nv => nv.Gioitinh)
-            </div>
-            <div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm col-md-offset-4">
+            <legend>
+                Đăng ký thành viên!
+            </legend>
+            @using (Html.BeginForm("Dangki", "Homes", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        @Html.LabelFor(nv => nv.Ten_NV, "Tên Nhân Viên:")
+                        @Html.TextBoxFor(nv => nv.Ten_NV, new { @class = "form-control" })
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        @Html.LabelFor(nv => nv.SĐT, "Số Điện Thoại:")
+                        @Html.TextBoxFor(nv => nv.SĐT, new { @class = "form-control" })
+                    </div>
+                </div>
                 @Html.LabelFor(nv => nv.Email, "Email:")
-                @Html.TextBoxFor(nv => nv.Email)
-            </div>
-            <div>
+                @Html.TextBoxFor(nv => nv.Email, new { @class = "form-control" })
                 @Html.LabelFor(nv => nv.Matkhau, "Mật khẩu:")
-                @Html.TextBoxFor(nv => nv.Matkhau)
-            </div>
-            <div>
+                @Html.TextBoxFor(nv => nv.Matkhau, new { @class = "form-control" })
                 @Html.LabelFor(nv => nv.Xacnhanmatkhau, "Xác nhận mật khẩu:")
-                @Html.TextBoxFor(nv => nv.Xacnhanmatkhau)
-            </div>
-            <div>
+                @Html.TextBoxFor(nv => nv.Xacnhanmatkhau, new { @class = "form-control" })
                 @Html.LabelFor(nv => nv.Role, "Chức vụ:")
-                @Html.TextBoxFor(nv => nv.Role)
-            </div>
-            <input type="submit" value="Đăng ký" />
-            @Html.ActionLink("Quay Lại","Index", "Homes")
-        }
+                @Html.TextBoxFor(nv => nv.Role, new { @class = "form-control" })
+                @Html.LabelFor(nv => nv.Diachi, "Địa chỉ:")
+                @Html.TextBoxFor(nv => nv.Diachi, new { @class = "form-control" })
+                @Html.LabelFor(nv => nv.Gioitinh, "Giới tính:")
+                @Html.TextBoxFor(nv => nv.Gioitinh, new { @class = "form-control" })
+                <br>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit"> Đăng ký</button>
+            }
+        </div>
     </div>
 </div>
 

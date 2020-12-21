@@ -14,10 +14,6 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
     {
         private ConnectDB db = new ConnectDB();
 
-        public HoadonsController()
-        {
-        }
-
         // GET: Admin/Hoadons
         public ActionResult Index()
         {
@@ -43,12 +39,7 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
         // GET: Admin/Hoadons/Create
         public ActionResult Create()
         {
-            
-            
-
-            var context = new ConnectDB();
-            var HanghoaSelect = new SelectList(context.Hanghoas, "Ten_HH", "Ten_HH");
-            ViewBag.Ten_HH = HanghoaSelect;
+            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH");
             ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV");
             return View();
         }
@@ -102,8 +93,8 @@ namespace QuanLySieuthimini1.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ten_HH", "Ten_HH", hoadon.Ten_HH);
-            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ten_NV", "Ten_NV", hoadon.Nhanvien.Ten_NV);
+            ViewBag.Ma_HH = new SelectList(db.Hanghoas, "Ma_HH", "Ten_HH", hoadon.Ma_HH);
+            ViewBag.Ma_NV = new SelectList(db.Nhanviens, "Ma_NV", "Ten_NV", hoadon.Ma_NV);
             return View(hoadon);
         }
 

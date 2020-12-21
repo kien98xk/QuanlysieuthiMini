@@ -5,13 +5,14 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Sửa thông tin hoá đơn</h2>
+<h2>Edit</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
+        <h4>Hoadon</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Ma_HD)
@@ -73,5 +74,5 @@
 }
 
 <div>
-    @Html.ActionLink("Quay Lại", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </div>

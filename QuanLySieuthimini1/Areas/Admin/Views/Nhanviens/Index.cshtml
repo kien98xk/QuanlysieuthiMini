@@ -4,16 +4,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
+<h2>Danh sách nhân viên</h2>
 <table class="table">
-    <tr>
-        <th>
-            <h2>Danh sách nhân viên</h2>
-        </th>
-        <th>
-            @Html.ActionLink("Quay lại", "Index", "Homes")
-        </th>
-    </tr>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Ten_NV)
